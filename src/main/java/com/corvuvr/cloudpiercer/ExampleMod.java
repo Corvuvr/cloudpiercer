@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.corvuvr.cloudpiercer;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -19,7 +19,7 @@ import org.slf4j.Logger;
 public class ExampleMod
 {
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "examplemod";
+    public static final String MODID = "cloudpiercer";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
