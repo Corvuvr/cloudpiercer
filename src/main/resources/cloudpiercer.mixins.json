@@ -1,0 +1,12 @@
+{
+    "required": true,
+    "package": "com.corvuvr.cloudpiercer.mixin",
+    "refmap": "cloudpiercer.refmap.json",
+    "mixins": [
+        "CloudPiercerMixin"
+    ],
+    "client": [],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}
