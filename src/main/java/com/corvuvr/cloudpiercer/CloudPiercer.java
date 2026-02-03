@@ -1,7 +1,6 @@
 package com.corvuvr.cloudpiercer;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -21,15 +20,14 @@ public class CloudPiercer
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    // Unused yet
-    public static float getRainIntensity(Level level, Player player, float intensity) {
+    public static float getRainIntensity(Level level, float intensity) {
         
         double playerY = 0; 
         double cloudY = 0;
 
-        if (level.isClientSide()) 
+        if (level.isClientSide() && !(level.players().isEmpty())) 
         {
-            playerY = player.getY();
+            playerY = level.players().get(0).getY();
         } 
 
         LOGGER.info(String.format("HELLO playerY: %.02f", playerY));
