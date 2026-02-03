@@ -2,6 +2,8 @@ package com.corvuvr.cloudpiercer;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.Level;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -24,15 +26,27 @@ public class CloudPiercer
         
         double playerY = 0; 
         double cloudY = 0;
+        double cloudThickness = 3.0F;
 
-        if (level.isClientSide() && !(level.players().isEmpty())) 
+        Minecraft mc = Minecraft.getInstance();
+
+        if (level.isClientSide() && mc.getCameraEntity() != null) 
         {
-            playerY = level.players().get(0).getY();
-        } 
+            if (level instanceof ClientLevel clientLevel)
+            {
+                cloudY = clientLevel.effects().getCloudHeight() + cloudThickness;
+            }
+            
+            playerY = mc.player.getEyeY();
 
-        LOGGER.info(String.format("HELLO playerY: %.02f", playerY));
-        LOGGER.info(String.format("HELLO cloudY: %.02f", cloudY));
+            LOGGER.info(String.format("HELLO playerY: %.02f", playerY));
+            LOGGER.info(String.format("HELLO cloudY: %.02f", cloudY));
+        }
+        else
+        {
+            // ...
+        }
 
-        return intensity;
+        return (playerY < cloudY) ? intensity : 0.0F;
     }
 }
