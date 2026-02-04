@@ -14,7 +14,7 @@ public abstract class CloudPiercerMixin {
     protected void setRainLevel(CallbackInfoReturnable<Float> cir)
     {
         cir.setReturnValue(
-            CloudPiercer.getRainIntensity((Level)(Object)this, 1.0F)
+            CloudPiercer.getRainIntensity((Level)(Object)this, cir.getReturnValue())
         );
     }
 

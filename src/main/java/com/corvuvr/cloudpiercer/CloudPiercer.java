@@ -23,30 +23,23 @@ public class CloudPiercer
     }
 
     public static float getRainIntensity(Level level, float intensity) {
-        
-        double playerY = 0; 
-        double cloudY = 0;
-        double cloudThickness = 3.0F;
 
         Minecraft mc = Minecraft.getInstance();
-
-        if (level.isClientSide() && mc.getCameraEntity() != null) 
+        if (level.isClientSide() && 
+            mc.getCameraEntity() != null &&
+            level instanceof ClientLevel clientLevel)
         {
-            if (level instanceof ClientLevel clientLevel)
-            {
-                cloudY = clientLevel.effects().getCloudHeight() + cloudThickness;
-            }
-            
-            playerY = mc.player.getEyeY();
+            double cloudThickness = 3.0F;
+            double cloudY = clientLevel.effects().getCloudHeight();
+            double playerY = mc.player.getEyeY();
 
-            LOGGER.info(String.format("HELLO playerY: %.02f", playerY));
-            LOGGER.info(String.format("HELLO cloudY: %.02f", cloudY));
+            return (float)(
+                (playerY > cloudY + cloudThickness) ? 0.0F :
+                (playerY > cloudY) ? intensity * (cloudThickness + cloudY - playerY) / cloudThickness : 
+                intensity
+            );
         }
-        else
-        {
-            // ...
-        }
-
-        return (playerY < cloudY) ? intensity : 0.0F;
+        
+        return intensity;
     }
 }
