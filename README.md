@@ -1,7 +1,7 @@
 <div align="center">
 
 <!--![logo.png](/images/cloudpiercer.png)-->
-<img src="https://github.com/Corvuvr/cloudpiercer/blob/main/images/cloudpiercer.png?raw=true" width="200">
+<img src="https://github.com/Corvuvr/cloudpiercer/blob/main/images/cloudpiercer.png?raw=true" width="400">
 
 
 # cloudpiercer
