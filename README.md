@@ -16,8 +16,8 @@ No more rain above the clouds, just like [Head In The Clouds](https://github.com
 
 ## ToDo
 
+- ~Fancy frontpage~
 - Server side maybe
-- Fancy frontpage
 
 ## Notes
 
