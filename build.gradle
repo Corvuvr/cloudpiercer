@@ -197,6 +197,11 @@ publishMods {
         projectId = "RY75XF69"
         minecraftVersions.add("1.20.1")
     }
+    curseforge {
+        accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
+        projectId = "1469005"
+        minecraftVersions.add("1.20.1")
+    }
 }
 
 tasks.withType(JavaCompile).configureEach {
