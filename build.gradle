@@ -193,12 +193,12 @@ publishMods {
         commitish = "main"
     }
     modrinth {
-        accessToken = providers.environmentVariable("MODRINTH_API_KEY")
+        accessToken = providers.environmentVariable("MODRINTH_KEY")
         projectId = "RY75XF69"
         minecraftVersions.add("1.20.1")
     }
     curseforge {
-        accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
+        accessToken = providers.environmentVariable("CURSEFORGE_KEY")
         projectId = "1469005"
         minecraftVersions.add("1.20.1")
     }
