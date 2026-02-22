@@ -192,6 +192,11 @@ publishMods {
         accessToken = providers.environmentVariable("GITHUB_TOKEN")
         commitish = "main"
     }
+    modrinth {
+        accessToken = providers.environmentVariable("MODRINTH_API_KEY")
+        projectId = "RY75XF69"
+        minecraftVersions.add("1.20.1")
+    }
 }
 
 tasks.withType(JavaCompile).configureEach {
