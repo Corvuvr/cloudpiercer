@@ -6,7 +6,7 @@
 
 # cloudpiercer
 
-No more rain above the clouds, just like [Head In The Clouds](https://github.com/DaFuqs/HeadInTheClouds) but for Forge 1.20.1
+No more rain above the clouds, just like [Head In The Clouds](https://github.com/DaFuqs/HeadInTheClouds) but for Forge 1.20.1 and without server logic (yet)
 
 ![demo.gif](https://github.com/Corvuvr/cloudpiercer/blob/main/images/cloudpiercer.gif?raw=true)
 
